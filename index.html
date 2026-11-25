@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142d27">
+  <meta name="description" content="Jogo narrativo interativo sobre preconceito racial na escola. Suas escolhas têm consequências.">
+  <title>Você Decide! — Entre Nós</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Entre Nós, início">
+      <span class="brand-mark">E</span>
+      <span class="brand-name">ENTRE NÓS<span class="brand-sub">JOGO DE ESCOLHAS</span></span>
+    </a>
+    <div class="toolbar" aria-label="Acessibilidade">
+      <button class="tool-btn" id="fontBtn" type="button" aria-pressed="false" title="Aumentar texto">A+</button>
+      <button class="tool-btn" id="contrastBtn" type="button" aria-pressed="false" title="Alternar alto contraste">Contraste</button>
+    </div>
+  </header>
+
+  <main class="page" id="inicio">
+    <section class="intro" id="introView" aria-labelledby="mainTitle">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">Semana da Consciência Negra · Ensino médio</span>
+          <h1 id="mainTitle">O respeito se constrói <em>nas escolhas.</em></h1>
+          <p class="hero-lead">Uma história interativa sobre situações de preconceito racial na escola. Você decide como agir — e acompanha o impacto de cada atitude.</p>
+          <div class="hero-actions">
+            <button class="primary-btn" id="startBtn" type="button">Começar a jornada <span aria-hidden="true">→</span></button>
+            <a class="text-link" href="#comoJogar">Como funciona</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div><div class="arch"></div>
+          <span class="spark a">✳</span><span class="spark b">✦</span>
+          <div class="figure one"><div class="hair"></div><div class="head"></div><div class="body"></div></div>
+          <div class="figure two"><div class="hair"></div><div class="head"></div><div class="body"></div></div>
+          <span class="orbit-note">ESCUTA · RESPEITO · AÇÃO</span>
+        </div>
+      </div>
+      <div class="resume-row" id="resumeRow">
+        <span id="resumeText">Você tem uma jornada em andamento.</span>
+        <button type="button" id="resumeBtn">Continuar de onde parei →</button>
+      </div>
+      <div class="intro-details" aria-label="Informações do jogo">
+        <div class="detail"><strong>4 situações do cotidiano</strong><span>Sala de aula, corredor, grupo de mensagens e trabalho escolar.</span></div>
+        <div class="detail"><strong>Escolhas com consequências</strong><span>Não há placar de pessoas boas ou ruins: há atitudes para analisar.</span></div>
+        <div class="detail"><strong>Jogo narrativo</strong><span>Tempo estimado: 8 a 12 minutos. Pode ser jogado individualmente ou em grupo.</span></div>
+      </div>
+      <section class="howto" id="comoJogar">
+        <span class="section-kicker">Antes de começar</span>
+        <h2>Como jogar</h2>
+        <div class="steps">
+          <div class="step"><span class="step-num">1</span><div><strong>Entre na história</strong><p>Você faz parte de uma turma que está organizando uma ação para melhorar a convivência.</p></div></div>
+          <div class="step"><span class="step-num">2</span><div><strong>Escolha como agir</strong><p>Leia a situação, avalie as alternativas e selecione a atitude que tomaria.</p></div></div>
+          <div class="step"><span class="step-num">3</span><div><strong>Observe o impacto</strong><p>Veja as consequências, acompanhe o percurso e reflita sobre outras possibilidades.</p></div></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="game-layout" id="gameView" aria-label="Jogo em andamento">
+      <aside class="panel side-panel" aria-label="Progresso da jornada">
+        <span class="side-label">Sua jornada</span>
+        <div class="side-title">Escolhas<br>em movimento</div>
+        <div class="progress-track" aria-label="Progresso"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-meta"><span id="progressText">0 de 4 cenas</span><span id="progressPercent">0%</span></div>
+        <div class="chapter-list" id="chapterList"></div>
+        <div class="meter-wrap">
+          <div class="meter-title">Impactos das suas escolhas</div>
+          <div class="meter-row">
+            <div class="meter"><div class="meter-head"><span>Acolhimento</span><b id="supportValue">0/8</b></div><div class="meter-bar"><i id="supportBar"></i></div></div>
+            <div class="meter"><div class="meter-head"><span>Responsabilidade</span><b id="actionValue">0/8</b></div><div class="meter-bar"><i id="actionBar"></i></div></div>
+            <div class="meter"><div class="meter-head"><span>Mudança coletiva</span><b id="collectiveValue">0/8</b></div><div class="meter-bar"><i id="collectiveBar"></i></div></div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="panel story-card" id="storyCard" aria-live="polite" aria-atomic="false">
+        <div class="scene-top"><span class="scene-tag" id="sceneTag">Cena 01 · O corredor</span><span class="scene-index" id="sceneIndex">01 / 04</span></div>
+        <h2 class="scene-title" id="sceneTitle">O comentário no corredor</h2>
+        <div class="scene-visual"><span class="emoji" id="sceneEmoji" aria-hidden="true">🏫</span><p id="sceneVisualText">O intervalo acabou de começar...</p></div>
+        <p class="scene-copy" id="sceneCopy"></p>
+        <blockquote class="dialogue" id="sceneDialogue"></blockquote>
+        <div id="choiceArea">
+          <div class="choice-heading">O que você faz?</div>
+          <div class="choices" id="choices"></div>
+        </div>
+        <div class="feedback" id="feedback" role="status" aria-live="polite">
+          <h3 id="feedbackTitle">A consequência da sua escolha</h3>
+          <p id="feedbackText"></p>
+          <div class="takeaway" id="feedbackTakeaway"></div>
+          <div class="continue-row"><button class="continue-btn" id="continueBtn" type="button">Próxima situação →</button></div>
+        </div>
+      </section>
+
+      <aside class="panel journal" aria-label="Diário das decisões">
+        <span class="side-label">Registro do percurso</span>
+        <h3>Diário de escolhas</h3>
+        <p class="journal-empty" id="journalEmpty">Suas decisões aparecerão aqui. Observe como pequenas atitudes podem abrir — ou fechar — caminhos.</p>
+        <div class="journal-list" id="journalList"></div>
+      </aside>
+    </section>
+
+    <section class="ending" id="endingView" aria-labelledby="endingTitle">
+      <div class="panel ending-panel">
+        <span class="ending-badge">Fim da jornada · Hora de refletir</span>
+        <h2 id="endingTitle">Uma rede de apoio em movimento</h2>
+        <p class="ending-lead" id="endingLead"></p>
+        <div class="result-grid">
+          <div class="result-card"><b id="finalSupport">0/8</b><span>Acolhimento</span></div>
+          <div class="result-card"><b id="finalAction">0/8</b><span>Responsabilidade</span></div>
+          <div class="result-card"><b id="finalCollective">0/8</b><span>Mudança coletiva</span></div>
+        </div>
+        <div class="reflection">
+          <h3>Leve a conversa adiante</h3>
+          <ol id="reflectionList">
+            <li>Como uma intervenção respeitosa pode mudar o ambiente?</li>
+            <li>Qual é a diferença entre apoiar alguém e falar por essa pessoa?</li>
+            <li>Que compromisso concreto a turma pode assumir a partir de hoje?</li>
+          </ol>
+        </div>
+        <div class="ending-actions">
+          <button class="primary-btn" type="button" id="replayBtn">Jogar novamente ↻</button>
+          <button class="secondary-btn" type="button" id="backSourcesBtn">Consultar referências</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="sources" id="referencias" aria-labelledby="sourcesTitle">
+      <span class="section-kicker">Para aprofundar</span>
+      <h2 id="sourcesTitle">Referências para a conversa</h2>
+      <p class="sources-intro">O jogo é fictício, mas o tema exige informação responsável. Consulte fontes oficiais para ampliar a discussão em sala.</p>
+      <div class="source-links">
+        <a href="https://www.planalto.gov.br/ccivil_03/leis/l9394compilado.htm" target="_blank" rel="noopener noreferrer">Lei de Diretrizes e Bases · Art. 26-A<small>Prevê o estudo da história e cultura afro-brasileira e indígena no ensino fundamental e médio.</small></a>
+        <a href="https://www.planalto.gov.br/ccivil_03/leis/l7716.htm" target="_blank" rel="noopener noreferrer">Lei nº 7.716/1989<small>Define crimes resultantes de discriminação ou preconceito, incluindo dispositivos atualizados.</small></a>
+        <a href="https://www.gov.br/mec/pt-br/acesso-a-informacao/perguntas-frequentes/uso-de-celulares-nas-escolas/a-lei-impede-denuncias-sobre" target="_blank" rel="noopener noreferrer">Orientação do Ministério da Educação<small>Indica caminhos de apoio e comunicação de situações de desrespeito ou violência na escola.</small></a>
+      </div>
+      <p class="disclaimer">Material educativo. As situações e personagens são fictícios. O jogo não substitui acolhimento, orientação da equipe escolar ou avaliação jurídica de casos concretos. Em uma situação real, procure um adulto de confiança e os canais de proteção da escola.</p>
+    </section>
+  </main>
+
+  <footer><span>ENTRE NÓS · Você Decide!</span><span>Produção de Jogos Digitais · Semana da Consciência Negra</span></footer>
+
+  <script src="game.js" defer></script>
+</body>
+</html>
