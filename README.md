@@ -1,52 +1,37 @@
-# Entre Nós — Você Decide!
+# Entre Nós — Missão Respeito (Aventura 2D)
 
-Jogo narrativo interativo sobre preconceito racial na escola, desenvolvido para a atividade de Produção de Jogos Digitais da Semana da Consciência Negra (3º ano do Ensino Médio).
+Jogo 2D de exploração com visão superior (top-down), desenvolvido para a atividade de Produção de Jogos Digitais da Semana da Consciência Negra — 3º ano do Ensino Médio.
 
-## Jogar
-
-Abra o endereço publicado pelo GitHub Pages:  
+## Jogar online
 https://alefsoaresvp-sudo.github.io/entre-nos-voce-decide/
 
-## Sobre o jogo
+## Como jogar
+- **WASD ou setas:** movimentar o personagem.
+- **E:** investigar objetos brilhantes e conversar com personagens.
+- **Celular:** use o direcional na tela e o botão INTERAGIR.
+- **Pausa:** botão no canto superior do cenário ou tecla Esc.
 
-A pessoa que joga participa de quatro situações fictícias do cotidiano escolar:
+Explore quatro áreas da escola: corredor, laboratório digital, biblioteca e pátio. Em cada área, encontre duas pistas brilhantes e converse com o personagem da missão. Depois, escolha uma atitude e acompanhe as consequências.
 
-1. Um comentário racista no corredor.
-2. Um meme discriminatório compartilhado no grupo da turma.
-3. A divisão de um trabalho sobre história e cultura afro-brasileira.
-4. O apoio a uma colega diante da repetição de episódios de discriminação.
+## Conteúdo pedagógico
+1. Racismo no cotidiano e acolhimento de uma colega.
+2. Discriminação em grupos digitais e responsabilidade na circulação de conteúdo.
+3. Literatura negra brasileira e representatividade no trabalho escolar.
+4. Direitos, rede de apoio e atitudes coletivas para enfrentar o racismo.
 
-Cada cena apresenta três decisões possíveis, consequências narrativas e uma orientação para reflexão. O percurso registra três dimensões — acolhimento, responsabilidade e mudança coletiva — que influenciam o texto do final. O jogo não é um quiz: as escolhas constroem uma história e permitem discutir diferentes formas de agir.
+O jogo utiliza cenários e personagens fictícios, três dimensões de percurso (acolhimento, responsabilidade e mudança coletiva), diário de progresso salvo localmente e finais narrativos.
 
-## Recursos
+## Tecnologia
+HTML5 Canvas, CSS e JavaScript puro. O mapa, os personagens e os objetos são desenhados por código em pixel art; não há dependências ou serviços externos.
 
-- Quatro cenas e doze decisões.
-- Feedback narrativo imediato e finais diferentes.
-- Diário de escolhas e indicador de progresso.
-- Salvamento local no navegador e opção para continuar.
-- Layout responsivo para celular e computador.
-- Controles de tamanho de texto e alto contraste.
-- Sem dependências externas, conta ou coleta de dados.
+## Executar localmente
+Baixe os arquivos e abra o arquivo index.html em um navegador moderno.
 
-## Como executar localmente
-
-Baixe os arquivos e abra **index.html** em um navegador moderno. O jogo utiliza HTML, CSS e JavaScript puro.
-
-## Publicar no GitHub Pages
-
-1. Abra **Settings → Pages** no repositório.
-2. Em **Build and deployment**, selecione **Deploy from a branch**.
-3. Escolha a branch **main** e a pasta **/(root)**.
-4. Clique em **Save**. Após a publicação, o site ficará disponível no endereço acima.
-
-## Referências para aprofundamento
-
-- [Lei de Diretrizes e Bases da Educação Nacional — art. 26-A](https://www.planalto.gov.br/ccivil_03/leis/l9394compilado.htm)
+## Referências
+- [Lei de Diretrizes e Bases — art. 26-A](https://www.planalto.gov.br/ccivil_03/leis/l9394compilado.htm)
 - [Lei nº 7.716/1989](https://www.planalto.gov.br/ccivil_03/leis/l7716.htm)
-- [Ministério da Educação — orientações sobre proteção no ambiente escolar](https://www.gov.br/mec/pt-br/acesso-a-informacao/perguntas-frequentes/uso-de-celulares-nas-escolas/a-lei-impede-denuncias-sobre)
 
-As cenas e personagens são fictícios. Material educativo: não substitui o acolhimento, a orientação da equipe escolar ou a avaliação de situações concretas.
+Material educativo. As situações são fictícias e não substituem a orientação da equipe escolar.
 
 ## Licença
-
-MIT. Consulte o arquivo **LICENSE**.
+MIT.
